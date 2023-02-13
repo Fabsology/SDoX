@@ -10,6 +10,7 @@ using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -137,10 +138,11 @@ namespace SDoX
 
             foreach (SDoXDocument document in this.Documents)
             {
-                if (document.Title == documentationTitle.Text)
+                if (document.Title.ToLower() == documentationTitle.Text.ToLower())
                 {
                     EditorDescriptionBox.Text = document.Description;
                     EditorTitleBox.Text = document.Title;
+                    EditorAuthorBox.Text = document.Author;
                     EditorContentBox.Rtf = document.Content;
                     break;
                 }
@@ -150,16 +152,26 @@ namespace SDoX
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
+            saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
+
             string[] args = Environment.GetCommandLineArgs();
             SdoXPath = args.Length > 1 ? args[1] : "SDoX.SDoX";
+            openFile();
+        }
+
+        public void openFile()
+        {
 
             if (System.IO.File.Exists(SdoXPath))
             {
                 IFormatter formatter = new BinaryFormatter();
                 Stream stream = new FileStream(SdoXPath, FileMode.Open, FileAccess.Read, FileShare.Read);
-                try { 
+                try
+                {
                     this.Documents = (List<SDoXDocument>)formatter.Deserialize(stream);
-                } catch (Exception Ex)
+                }
+                catch (Exception Ex)
                 {
                     DialogResult dialogResult = MessageBox.Show("The Documentation seem to be corrupted! Check your 'SDoX.SDoX' file in your local installation folder! \nErrM:\n" + Ex.Message, "Serialization Error", MessageBoxButtons.OK);
                 }
@@ -208,5 +220,26 @@ namespace SDoX
             tabControl1.SelectedIndex = 3;
         }
 
+        private void materialRaisedButton5_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void materialRaisedButton4_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            SdoXPath = saveFileDialog1.FileName;
+            saveDocumentationInFile();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            SdoXPath = openFileDialog1.FileName;
+            openFile();
+        }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem("");
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,20 +48,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.EditorContentBox = new VPKSoft.RichTextEdit.RichTextBoxWithToolStrip();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.EditorDescriptionBox = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.EditorAuthorBox = new System.Windows.Forms.TextBox();
-            this.EditorTitleBox = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.documentationListView = new System.Windows.Forms.ListView();
-            this.searchbar = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.AuthorLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.searchbar = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.EditorTitleBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.EditorAuthorBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,6 +74,8 @@
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -81,10 +86,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 76);
+            this.tabControl1.Location = new System.Drawing.Point(12, 99);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 362);
+            this.tabControl1.Size = new System.Drawing.Size(776, 339);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -99,7 +104,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 336);
+            this.tabPage1.Size = new System.Drawing.Size(768, 313);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Documentation";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -198,7 +203,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DocumentationViewBox.Location = new System.Drawing.Point(3, 45);
             this.DocumentationViewBox.Name = "DocumentationViewBox";
-            this.DocumentationViewBox.Size = new System.Drawing.Size(762, 262);
+            this.DocumentationViewBox.Size = new System.Drawing.Size(762, 239);
             this.DocumentationViewBox.TabIndex = 6;
             this.DocumentationViewBox.Text = "";
             // 
@@ -207,7 +212,7 @@
             this.DocumentCreated.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.DocumentCreated.AutoSize = true;
             this.DocumentCreated.ForeColor = System.Drawing.Color.Gray;
-            this.DocumentCreated.Location = new System.Drawing.Point(564, 317);
+            this.DocumentCreated.Location = new System.Drawing.Point(564, 294);
             this.DocumentCreated.Name = "DocumentCreated";
             this.DocumentCreated.Size = new System.Drawing.Size(47, 13);
             this.DocumentCreated.TabIndex = 4;
@@ -218,7 +223,7 @@
             this.DocumentLastUpdated.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.DocumentLastUpdated.AutoSize = true;
             this.DocumentLastUpdated.ForeColor = System.Drawing.Color.Gray;
-            this.DocumentLastUpdated.Location = new System.Drawing.Point(382, 317);
+            this.DocumentLastUpdated.Location = new System.Drawing.Point(382, 294);
             this.DocumentLastUpdated.Name = "DocumentLastUpdated";
             this.DocumentLastUpdated.Size = new System.Drawing.Size(74, 13);
             this.DocumentLastUpdated.TabIndex = 3;
@@ -226,18 +231,15 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel6);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.EditorDescriptionBox);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.EditorAuthorBox);
-            this.tabPage2.Controls.Add(this.EditorTitleBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 336);
+            this.tabPage2.Size = new System.Drawing.Size(768, 313);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Editor";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -247,7 +249,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.materialRaisedButton1);
-            this.panel4.Location = new System.Drawing.Point(704, 284);
+            this.panel4.Location = new System.Drawing.Point(704, 261);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(60, 52);
             this.panel4.TabIndex = 10;
@@ -275,9 +277,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.EditorContentBox);
-            this.groupBox1.Location = new System.Drawing.Point(9, 59);
+            this.groupBox1.Location = new System.Drawing.Point(9, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(753, 218);
+            this.groupBox1.Size = new System.Drawing.Size(753, 185);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Content";
@@ -296,73 +298,39 @@
             this.EditorContentBox.Location = new System.Drawing.Point(9, 19);
             this.EditorContentBox.MoreColorsText = "More colors...";
             this.EditorContentBox.Name = "EditorContentBox";
-            this.EditorContentBox.Size = new System.Drawing.Size(744, 193);
+            this.EditorContentBox.Size = new System.Drawing.Size(744, 160);
             this.EditorContentBox.TabIndex = 0;
             this.EditorContentBox.WordWrap = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 280);
+            this.label6.Location = new System.Drawing.Point(6, 257);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "Description";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Author";
-            // 
             // EditorDescriptionBox
             // 
             this.EditorDescriptionBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditorDescriptionBox.Location = new System.Drawing.Point(6, 294);
+            this.EditorDescriptionBox.Location = new System.Drawing.Point(6, 271);
             this.EditorDescriptionBox.Name = "EditorDescriptionBox";
             this.EditorDescriptionBox.Size = new System.Drawing.Size(695, 39);
             this.EditorDescriptionBox.TabIndex = 4;
             this.EditorDescriptionBox.Text = "";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Title";
-            // 
-            // EditorAuthorBox
-            // 
-            this.EditorAuthorBox.Location = new System.Drawing.Point(67, 33);
-            this.EditorAuthorBox.Name = "EditorAuthorBox";
-            this.EditorAuthorBox.Size = new System.Drawing.Size(133, 20);
-            this.EditorAuthorBox.TabIndex = 1;
-            // 
-            // EditorTitleBox
-            // 
-            this.EditorTitleBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditorTitleBox.Location = new System.Drawing.Point(67, 7);
-            this.EditorTitleBox.Name = "EditorTitleBox";
-            this.EditorTitleBox.Size = new System.Drawing.Size(695, 20);
-            this.EditorTitleBox.TabIndex = 0;
-            // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.panel5);
             this.tabPage3.Controls.Add(this.label1);
             this.tabPage3.Controls.Add(this.panel3);
             this.tabPage3.Controls.Add(this.documentationListView);
-            this.tabPage3.Controls.Add(this.searchbar);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(768, 336);
+            this.tabPage3.Size = new System.Drawing.Size(768, 313);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Overview";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -401,29 +369,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.documentationListView.HideSelection = false;
             this.documentationListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
-            this.documentationListView.Location = new System.Drawing.Point(6, 42);
+            listViewItem40,
+            listViewItem41,
+            listViewItem42});
+            this.documentationListView.Location = new System.Drawing.Point(6, 45);
             this.documentationListView.Name = "documentationListView";
-            this.documentationListView.Size = new System.Drawing.Size(756, 288);
+            this.documentationListView.Size = new System.Drawing.Size(756, 262);
             this.documentationListView.TabIndex = 3;
             this.documentationListView.UseCompatibleStateImageBehavior = false;
             this.documentationListView.View = System.Windows.Forms.View.Details;
             this.documentationListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.documentationListView_MouseDoubleClick);
             // 
-            // searchbar
-            // 
-            this.searchbar.Location = new System.Drawing.Point(6, 12);
-            this.searchbar.Name = "searchbar";
-            this.searchbar.Size = new System.Drawing.Size(338, 20);
-            this.searchbar.TabIndex = 1;
-            this.searchbar.TextChanged += new System.EventHandler(this.searchbar_TextChanged);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.DefaultExt = "SdoX File|*.SDoX";
             this.openFileDialog1.FileName = "SDox.SDox";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // materialLabel1
             // 
@@ -442,7 +403,7 @@
             this.AuthorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AuthorLabel.AutoSize = true;
             this.AuthorLabel.ForeColor = System.Drawing.Color.Gray;
-            this.AuthorLabel.Location = new System.Drawing.Point(6, 317);
+            this.AuthorLabel.Location = new System.Drawing.Point(6, 294);
             this.AuthorLabel.Name = "AuthorLabel";
             this.AuthorLabel.Size = new System.Drawing.Size(41, 13);
             this.AuthorLabel.TabIndex = 1;
@@ -453,17 +414,133 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(17, 33);
+            this.label1.Location = new System.Drawing.Point(7, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 9);
             this.label1.TabIndex = 5;
             this.label1.Text = "Double click to open";
+            // 
+            // materialRaisedButton4
+            // 
+            this.materialRaisedButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialRaisedButton4.AutoSize = true;
+            this.materialRaisedButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton4.Depth = 0;
+            this.materialRaisedButton4.Icon = null;
+            this.materialRaisedButton4.Location = new System.Drawing.Point(697, 71);
+            this.materialRaisedButton4.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton4.Name = "materialRaisedButton4";
+            this.materialRaisedButton4.Primary = true;
+            this.materialRaisedButton4.Size = new System.Drawing.Size(85, 36);
+            this.materialRaisedButton4.TabIndex = 3;
+            this.materialRaisedButton4.Text = "Save File";
+            this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            this.materialRaisedButton4.Click += new System.EventHandler(this.materialRaisedButton4_Click);
+            // 
+            // materialRaisedButton5
+            // 
+            this.materialRaisedButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialRaisedButton5.AutoSize = true;
+            this.materialRaisedButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton5.Depth = 0;
+            this.materialRaisedButton5.Icon = null;
+            this.materialRaisedButton5.Location = new System.Drawing.Point(591, 71);
+            this.materialRaisedButton5.Margin = new System.Windows.Forms.Padding(0);
+            this.materialRaisedButton5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton5.Name = "materialRaisedButton5";
+            this.materialRaisedButton5.Primary = true;
+            this.materialRaisedButton5.Size = new System.Drawing.Size(87, 36);
+            this.materialRaisedButton5.TabIndex = 4;
+            this.materialRaisedButton5.Text = "Open File";
+            this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            this.materialRaisedButton5.Click += new System.EventHandler(this.materialRaisedButton5_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.searchbar);
+            this.panel5.Location = new System.Drawing.Point(6, 6);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(670, 30);
+            this.panel5.TabIndex = 6;
+            // 
+            // searchbar
+            // 
+            this.searchbar.Depth = 0;
+            this.searchbar.Hint = "Search";
+            this.searchbar.Location = new System.Drawing.Point(3, 1);
+            this.searchbar.MaxLength = 32767;
+            this.searchbar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.searchbar.Name = "searchbar";
+            this.searchbar.PasswordChar = '\0';
+            this.searchbar.SelectedText = "";
+            this.searchbar.SelectionLength = 0;
+            this.searchbar.SelectionStart = 0;
+            this.searchbar.Size = new System.Drawing.Size(318, 23);
+            this.searchbar.TabIndex = 0;
+            this.searchbar.TabStop = false;
+            this.searchbar.UseSystemPasswordChar = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.EditorAuthorBox);
+            this.panel6.Controls.Add(this.EditorTitleBox);
+            this.panel6.Location = new System.Drawing.Point(18, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(746, 63);
+            this.panel6.TabIndex = 11;
+            // 
+            // EditorTitleBox
+            // 
+            this.EditorTitleBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditorTitleBox.Depth = 0;
+            this.EditorTitleBox.Hint = "Title";
+            this.EditorTitleBox.Location = new System.Drawing.Point(3, 5);
+            this.EditorTitleBox.MaxLength = 32767;
+            this.EditorTitleBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.EditorTitleBox.Name = "EditorTitleBox";
+            this.EditorTitleBox.PasswordChar = '\0';
+            this.EditorTitleBox.SelectedText = "";
+            this.EditorTitleBox.SelectionLength = 0;
+            this.EditorTitleBox.SelectionStart = 0;
+            this.EditorTitleBox.Size = new System.Drawing.Size(685, 23);
+            this.EditorTitleBox.TabIndex = 0;
+            this.EditorTitleBox.TabStop = false;
+            this.EditorTitleBox.UseSystemPasswordChar = false;
+            // 
+            // EditorAuthorBox
+            // 
+            this.EditorAuthorBox.Depth = 0;
+            this.EditorAuthorBox.Hint = "Author";
+            this.EditorAuthorBox.Location = new System.Drawing.Point(3, 32);
+            this.EditorAuthorBox.MaxLength = 32767;
+            this.EditorAuthorBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.EditorAuthorBox.Name = "EditorAuthorBox";
+            this.EditorAuthorBox.PasswordChar = '\0';
+            this.EditorAuthorBox.SelectedText = "";
+            this.EditorAuthorBox.SelectionLength = 0;
+            this.EditorAuthorBox.SelectionStart = 0;
+            this.EditorAuthorBox.Size = new System.Drawing.Size(308, 23);
+            this.EditorAuthorBox.TabIndex = 1;
+            this.EditorAuthorBox.TabStop = false;
+            this.EditorAuthorBox.UseSystemPasswordChar = false;
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.materialRaisedButton5);
+            this.Controls.Add(this.materialRaisedButton4);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "SDoX";
@@ -484,7 +561,10 @@
             this.tabPage3.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -496,12 +576,7 @@
         private System.Windows.Forms.Label DocumentCreated;
         private System.Windows.Forms.Label DocumentLastUpdated;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TextBox searchbar;
-        private System.Windows.Forms.TextBox EditorAuthorBox;
-        private System.Windows.Forms.TextBox EditorTitleBox;
         private System.Windows.Forms.RichTextBox EditorDescriptionBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
@@ -521,6 +596,14 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private System.Windows.Forms.Label AuthorLabel;
         private System.Windows.Forms.Label label1;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;
+        private System.Windows.Forms.Panel panel5;
+        private MaterialSkin.Controls.MaterialSingleLineTextField searchbar;
+        private System.Windows.Forms.Panel panel6;
+        private MaterialSkin.Controls.MaterialSingleLineTextField EditorAuthorBox;
+        private MaterialSkin.Controls.MaterialSingleLineTextField EditorTitleBox;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
