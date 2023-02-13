@@ -63,6 +63,26 @@ namespace SDoX.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FAVICON {
+            get {
+                object obj = ResourceManager.GetObject("FAVICON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FAVICON_32 {
+            get {
+                object obj = ResourceManager.GetObject("FAVICON_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_speichern_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8_speichern_50", resourceCulture);

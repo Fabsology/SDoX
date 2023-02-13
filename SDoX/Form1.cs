@@ -80,20 +80,6 @@ namespace SDoX
             refreshListview();
         }
 
-        private void searchbar_TextChanged(object sender, EventArgs e)
-        {
-            documentationListView.Items.Clear();
-            foreach (SDoXDocument document in this.Documents)
-            {
-                if (document.Title.ToLower().Contains(searchbar.Text.ToLower()) || document.Author.ToLower().Contains(searchbar.Text.ToLower()) || document.Description.ToLower().Contains(searchbar.Text.ToLower()))
-                {
-                    string[] row = { document.Title, document.Description, document.Author };
-                    ListViewItem ListEntry = new ListViewItem(row);
-                    documentationListView.Items.Add(ListEntry);
-                }
-
-            }
-        }
 
         private void refreshListview()
         {
@@ -179,6 +165,7 @@ namespace SDoX
             }
             refreshListview();
             tabControl1.SelectedIndex = 2;
+            FileTitle.Text = System.IO.Path.GetFileName(SdoXPath);
         }
 
         private void materialCheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -203,13 +190,13 @@ namespace SDoX
             deleteButton.Visible = false;
 
 
-            var result = from r in this.Documents where r.Title == documentationTitle.Text select r;
+            var result = from r in this.Documents where r.Title.ToLower() == documentationTitle.Text.ToLower() select r;
             try { 
                 this.Documents.Remove(result.First());
                 saveDocumentationInFile();
             } catch (Exception Ex)
             {
-
+                MessageBox.Show("An Error occurred while saving!\n\n" + Ex.Message,"Oopsy!",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             documentationTitle.Text = "";
             DocumentCreated.Text = "Created:";
@@ -240,6 +227,21 @@ namespace SDoX
         {
             SdoXPath = openFileDialog1.FileName;
             openFile();
+        }
+
+        private void searchbar_TextChanged(object sender, EventArgs e)
+        {
+
+            documentationListView.Items.Clear();
+            foreach (SDoXDocument document in this.Documents)
+            {
+                if (document.Title.ToLower().Contains(searchbar.Text.ToLower()) || document.Content.ToLower().Contains(searchbar.Text.ToLower()) || document.Author.ToLower().Contains(searchbar.Text.ToLower()) || document.Description.ToLower().Contains(searchbar.Text.ToLower()))
+                {
+                    string[] row = { document.Title, document.Description, document.Author };
+                    ListViewItem ListEntry = new ListViewItem(row);
+                    documentationListView.Items.Add(ListEntry);
+                }
+            }
         }
     }
 }
