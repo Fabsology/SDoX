@@ -36,6 +36,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.documentationTitle = new MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.deleteButton = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -52,6 +54,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.EditorContentBox = new VPKSoft.RichTextEdit.RichTextBoxWithToolStrip();
             this.label6 = new System.Windows.Forms.Label();
             this.EditorDescriptionBox = new System.Windows.Forms.RichTextBox();
@@ -68,12 +71,11 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FileTitle = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.materialRaisedButton7 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -83,7 +85,6 @@
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -139,6 +140,32 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(408, 44);
             this.panel2.TabIndex = 8;
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.materialRaisedButton6);
+            this.panel7.Location = new System.Drawing.Point(282, 5);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(123, 36);
+            this.panel7.TabIndex = 9;
+            // 
+            // materialRaisedButton6
+            // 
+            this.materialRaisedButton6.AutoSize = true;
+            this.materialRaisedButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton6.Depth = 0;
+            this.materialRaisedButton6.Icon = null;
+            this.materialRaisedButton6.Location = new System.Drawing.Point(0, 0);
+            this.materialRaisedButton6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton6.Name = "materialRaisedButton6";
+            this.materialRaisedButton6.Primary = true;
+            this.materialRaisedButton6.Size = new System.Drawing.Size(123, 36);
+            this.materialRaisedButton6.TabIndex = 7;
+            this.materialRaisedButton6.Text = "Export to PDF";
+            this.materialRaisedButton6.UseVisualStyleBackColor = true;
+            this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click);
             // 
             // documentationTitle
             // 
@@ -282,6 +309,7 @@
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.materialRaisedButton7);
             this.panel6.Controls.Add(this.EditorAuthorBox);
             this.panel6.Controls.Add(this.EditorTitleBox);
             this.panel6.Location = new System.Drawing.Point(18, 0);
@@ -320,7 +348,7 @@
             this.EditorTitleBox.SelectedText = "";
             this.EditorTitleBox.SelectionLength = 0;
             this.EditorTitleBox.SelectionStart = 0;
-            this.EditorTitleBox.Size = new System.Drawing.Size(685, 23);
+            this.EditorTitleBox.Size = new System.Drawing.Size(671, 23);
             this.EditorTitleBox.TabIndex = 0;
             this.EditorTitleBox.TabStop = false;
             this.EditorTitleBox.UseSystemPasswordChar = false;
@@ -365,6 +393,20 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Content";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.Location = new System.Drawing.Point(689, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 9);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Show RTF";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // EditorContentBox
             // 
@@ -575,45 +617,21 @@
             this.FileTitle.TabIndex = 6;
             this.FileTitle.Text = "SDoX.SDoX";
             // 
-            // materialRaisedButton6
+            // materialRaisedButton7
             // 
-            this.materialRaisedButton6.AutoSize = true;
-            this.materialRaisedButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton6.Depth = 0;
-            this.materialRaisedButton6.Icon = null;
-            this.materialRaisedButton6.Location = new System.Drawing.Point(0, 0);
-            this.materialRaisedButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton6.Name = "materialRaisedButton6";
-            this.materialRaisedButton6.Primary = true;
-            this.materialRaisedButton6.Size = new System.Drawing.Size(123, 36);
-            this.materialRaisedButton6.TabIndex = 7;
-            this.materialRaisedButton6.Text = "Export to PDF";
-            this.materialRaisedButton6.UseVisualStyleBackColor = true;
-            this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.materialRaisedButton6);
-            this.panel7.Location = new System.Drawing.Point(282, 5);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(123, 36);
-            this.panel7.TabIndex = 9;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(689, 2);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 9);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Show RTF";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.materialRaisedButton7.AutoSize = true;
+            this.materialRaisedButton7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton7.Depth = 0;
+            this.materialRaisedButton7.Icon = null;
+            this.materialRaisedButton7.Location = new System.Drawing.Point(680, 14);
+            this.materialRaisedButton7.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton7.Name = "materialRaisedButton7";
+            this.materialRaisedButton7.Primary = true;
+            this.materialRaisedButton7.Size = new System.Drawing.Size(63, 36);
+            this.materialRaisedButton7.TabIndex = 2;
+            this.materialRaisedButton7.Text = "Clear";
+            this.materialRaisedButton7.UseVisualStyleBackColor = true;
+            this.materialRaisedButton7.Click += new System.EventHandler(this.materialRaisedButton7_Click);
             // 
             // Form1
             // 
@@ -636,11 +654,14 @@
             this.tabPage1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -651,8 +672,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,6 +718,7 @@
         private System.Windows.Forms.Panel panel7;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
         private System.Windows.Forms.Label label2;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton7;
     }
 }
 

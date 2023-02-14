@@ -142,6 +142,9 @@ namespace SDoX
             openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
             saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
 
+            EditorContentBox.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Microsoft Sans Serif;}}\r\n{\\colortbl ;\\red255\\green192\\blue0;\\red255\\green255\\blue255;\\red165\\green165\\blue165;\\red51\\green51\\blue51;}\r\n{\\*\\generator Riched20 10.0.19041}\\viewkind4\\uc1 \r\n\\pard\\cf1\\highlight2\\f0\\fs47 My Fancy Headline\\cf0\\fs17\\line\\line\\cf3\\fs20 My Fancy Introduction About The Document\\cf0\\line\\line\\cf4 My Fance Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\\cf0\\highlight0\\par\r\n}\r\n";
+            EditorAuthorBox.Text = "Your, the Author";
+            EditorTitleBox.Text = "New Document";
             string[] args = Environment.GetCommandLineArgs();
             SdoXPath = args.Length > 1 ? args[1] : "SDoX.SDoX";
             openFile();
@@ -285,6 +288,14 @@ namespace SDoX
             RTF_Viewer rTF = new RTF_Viewer();
             rTF.content = EditorContentBox.Rtf;
             rTF.ShowDialog();
+        }
+
+        private void materialRaisedButton7_Click(object sender, EventArgs e)
+        {
+            EditorContentBox.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1031{\\fonttbl{\\f0\\fnil\\fcharset0 Microsoft Sans Serif;}}\r\n{\\colortbl ;\\red255\\green192\\blue0;\\red255\\green255\\blue255;\\red165\\green165\\blue165;\\red51\\green51\\blue51;}\r\n{\\*\\generator Riched20 10.0.19041}\\viewkind4\\uc1 \r\n\\pard\\cf1\\highlight2\\f0\\fs47 My Fancy Headline\\cf0\\fs17\\line\\line\\cf3\\fs20 My Fancy Introduction About The Document\\cf0\\line\\line\\cf4 My Fance Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\\cf0\\highlight0\\par\r\n}\r\n";
+            EditorAuthorBox.Text = "Your, the Author";
+            EditorTitleBox.Text = "New Document";
+
         }
     }
 }
