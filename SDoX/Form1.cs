@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using iTextSharp.text.pdf;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -242,6 +243,48 @@ namespace SDoX
                     documentationListView.Items.Add(ListEntry);
                 }
             }
+        }
+
+        private void materialRaisedButton6_Click(object sender, EventArgs e)
+        {
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save As PDF";
+            sfd.Filter = "(*.pdf)|*.pdf";
+            sfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments);
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+
+                iTextSharp.text.Document DOC = new iTextSharp.text.Document();
+                PdfWriter.GetInstance(DOC, new FileStream(sfd.FileName, FileMode.Create));
+
+
+                DOC.Open();
+                foreach (SDoXDocument document in this.Documents)
+                {
+                    if (document.Title.ToLower() == documentationTitle.Text.ToLower())
+                    {
+
+                        DOC.AddTitle(document.Title);
+                        DOC.AddAuthor(document.Author);
+                        RichTextBox temprtb = new RichTextBox();
+                        temprtb.Rtf = document.Content;
+                        DOC.Add(new iTextSharp.text.Paragraph(temprtb.Text));
+                        break;
+                    }
+                }
+                DOC.Close();
+                DOC.Dispose();
+
+            }
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            RTF_Viewer rTF = new RTF_Viewer();
+            rTF.content = EditorContentBox.Rtf;
+            rTF.ShowDialog();
         }
     }
 }

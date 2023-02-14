@@ -68,6 +68,9 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FileTitle = new MaterialSkin.Controls.MaterialLabel();
+            this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +83,7 @@
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -93,7 +97,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 99);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 339);
+            this.tabControl1.Size = new System.Drawing.Size(776, 495);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -108,7 +112,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 313);
+            this.tabPage1.Size = new System.Drawing.Size(768, 469);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Documentation";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -129,6 +133,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.documentationTitle);
             this.panel2.Location = new System.Drawing.Point(3, 0);
             this.panel2.Name = "panel2";
@@ -217,9 +222,10 @@
             this.DocumentationViewBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.DocumentationViewBox.EnableAutoDragDrop = true;
             this.DocumentationViewBox.Location = new System.Drawing.Point(3, 45);
             this.DocumentationViewBox.Name = "DocumentationViewBox";
-            this.DocumentationViewBox.Size = new System.Drawing.Size(762, 239);
+            this.DocumentationViewBox.Size = new System.Drawing.Size(762, 387);
             this.DocumentationViewBox.TabIndex = 6;
             this.DocumentationViewBox.Text = "";
             // 
@@ -228,7 +234,7 @@
             this.DocumentCreated.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.DocumentCreated.AutoSize = true;
             this.DocumentCreated.ForeColor = System.Drawing.Color.Gray;
-            this.DocumentCreated.Location = new System.Drawing.Point(564, 294);
+            this.DocumentCreated.Location = new System.Drawing.Point(564, 450);
             this.DocumentCreated.Name = "DocumentCreated";
             this.DocumentCreated.Size = new System.Drawing.Size(47, 13);
             this.DocumentCreated.TabIndex = 4;
@@ -239,7 +245,7 @@
             this.DocumentLastUpdated.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.DocumentLastUpdated.AutoSize = true;
             this.DocumentLastUpdated.ForeColor = System.Drawing.Color.Gray;
-            this.DocumentLastUpdated.Location = new System.Drawing.Point(382, 294);
+            this.DocumentLastUpdated.Location = new System.Drawing.Point(382, 450);
             this.DocumentLastUpdated.Name = "DocumentLastUpdated";
             this.DocumentLastUpdated.Size = new System.Drawing.Size(74, 13);
             this.DocumentLastUpdated.TabIndex = 3;
@@ -250,7 +256,7 @@
             this.AuthorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AuthorLabel.AutoSize = true;
             this.AuthorLabel.ForeColor = System.Drawing.Color.Gray;
-            this.AuthorLabel.Location = new System.Drawing.Point(6, 294);
+            this.AuthorLabel.Location = new System.Drawing.Point(6, 450);
             this.AuthorLabel.Name = "AuthorLabel";
             this.AuthorLabel.Size = new System.Drawing.Size(41, 13);
             this.AuthorLabel.TabIndex = 1;
@@ -266,7 +272,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 313);
+            this.tabPage2.Size = new System.Drawing.Size(768, 469);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Editor";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -324,7 +330,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.materialRaisedButton1);
-            this.panel4.Location = new System.Drawing.Point(704, 261);
+            this.panel4.Location = new System.Drawing.Point(704, 417);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(60, 52);
             this.panel4.TabIndex = 10;
@@ -351,10 +357,11 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.EditorContentBox);
             this.groupBox1.Location = new System.Drawing.Point(9, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(753, 185);
+            this.groupBox1.Size = new System.Drawing.Size(753, 341);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Content";
@@ -362,6 +369,7 @@
             // EditorContentBox
             // 
             this.EditorContentBox.AcceptsTab = true;
+            this.EditorContentBox.AllowDrop = true;
             this.EditorContentBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -373,7 +381,7 @@
             this.EditorContentBox.Location = new System.Drawing.Point(9, 19);
             this.EditorContentBox.MoreColorsText = "More colors...";
             this.EditorContentBox.Name = "EditorContentBox";
-            this.EditorContentBox.Size = new System.Drawing.Size(744, 160);
+            this.EditorContentBox.Size = new System.Drawing.Size(744, 316);
             this.EditorContentBox.TabIndex = 0;
             this.EditorContentBox.WordWrap = true;
             // 
@@ -390,7 +398,7 @@
             // 
             this.EditorDescriptionBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EditorDescriptionBox.Location = new System.Drawing.Point(6, 271);
+            this.EditorDescriptionBox.Location = new System.Drawing.Point(6, 427);
             this.EditorDescriptionBox.Name = "EditorDescriptionBox";
             this.EditorDescriptionBox.Size = new System.Drawing.Size(695, 39);
             this.EditorDescriptionBox.TabIndex = 4;
@@ -405,7 +413,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(768, 313);
+            this.tabPage3.Size = new System.Drawing.Size(768, 469);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Overview";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -487,7 +495,7 @@
             listViewItem3});
             this.documentationListView.Location = new System.Drawing.Point(6, 45);
             this.documentationListView.Name = "documentationListView";
-            this.documentationListView.Size = new System.Drawing.Size(756, 262);
+            this.documentationListView.Size = new System.Drawing.Size(756, 418);
             this.documentationListView.TabIndex = 3;
             this.documentationListView.UseCompatibleStateImageBehavior = false;
             this.documentationListView.View = System.Windows.Forms.View.Details;
@@ -567,11 +575,51 @@
             this.FileTitle.TabIndex = 6;
             this.FileTitle.Text = "SDoX.SDoX";
             // 
+            // materialRaisedButton6
+            // 
+            this.materialRaisedButton6.AutoSize = true;
+            this.materialRaisedButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialRaisedButton6.Depth = 0;
+            this.materialRaisedButton6.Icon = null;
+            this.materialRaisedButton6.Location = new System.Drawing.Point(0, 0);
+            this.materialRaisedButton6.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton6.Name = "materialRaisedButton6";
+            this.materialRaisedButton6.Primary = true;
+            this.materialRaisedButton6.Size = new System.Drawing.Size(123, 36);
+            this.materialRaisedButton6.TabIndex = 7;
+            this.materialRaisedButton6.Text = "Export to PDF";
+            this.materialRaisedButton6.UseVisualStyleBackColor = true;
+            this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.materialRaisedButton6);
+            this.panel7.Location = new System.Drawing.Point(282, 5);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(123, 36);
+            this.panel7.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.Location = new System.Drawing.Point(689, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 9);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Show RTF";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 606);
             this.Controls.Add(this.FileTitle);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialRaisedButton5);
@@ -596,12 +644,15 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -645,6 +696,9 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel FileTitle;
+        private System.Windows.Forms.Panel panel7;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
+        private System.Windows.Forms.Label label2;
     }
 }
 
