@@ -1,0 +1,652 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VPKSoft.TextEditIcons</name>
+    </assembly>
+    <members>
+        <member name="T:VPKSoft.TextEditIcons.IconsTextEdit">
+            <summary>
+            A class containing text editor icons which colors can be changed.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.IconsTextEdit.ColorForeground">
+            <summary>
+            Gets or set the foreground color used in the icons.
+            <para/>This is for the parameterless icon methods.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.IconsTextEdit.ColorGlyph">
+            <summary>
+            Gets or sets the color used in the icon glyphs such as an arrow or superscript sign.
+            <para/>This is for the parameterless icon methods.
+            </summary>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.ReplaceColor(System.Drawing.Bitmap,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Replaces a color within a given bitmap with another color.
+            </summary>
+            <param name="bitmap">A bitmap which color is to be replaced.</param>
+            <param name="originalColor">The original color to be replaced.</param>
+            <param name="replacementColor">The color to be used the replace the original color.</param>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.ReplaceColorTreshold(System.Drawing.Bitmap,System.Drawing.Color,System.Drawing.Color,System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Replaces a color within a given bitmap with another color maintaining the color's alpha channel.
+            </summary>
+            <param name="bitmap">A bitmap which color is to be replaced.</param>
+            <param name="originalColor">The original color to be replaced.</param>
+            <param name="replacementColor">The color to be used the replace the original color.</param>
+            <param name="R">An upper/lower treshold boundary for the red color channel.</param>
+            <param name="G">An upper/lower treshold boundary for the green color channel.</param>
+            <param name="B">An upper/lower treshold boundary for the blue color channel.</param>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.BoldIcon(System.Drawing.Color)">
+            <summary>
+            Gets a font style bold icon with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>A font style bold icon with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.BoldIcon">
+            <summary>
+            Gets a font style bold icon.
+            </summary>
+            <returns>A font style bold icon</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.UndoIcon(System.Drawing.Color)">
+            <summary>
+            Gets an undo icon with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>An undo icon with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.UndoIcon">
+            <summary>
+            Gets an undo icon.
+            </summary>
+            <returns>An undo icon</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.RedoIcon(System.Drawing.Color)">
+            <summary>
+            Gets a redo icon with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>A redo icon with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.RedoIcon">
+            <summary>
+            Gets a redo icon.
+            </summary>
+            <returns>A redo icon</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.ItalicIcon(System.Drawing.Color)">
+            <summary>
+            Gets a font style italic icon with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>A font style italic icon with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.ItalicIcon">
+            <summary>
+            Gets a font style italic icon.
+            </summary>
+            <returns>A font style italic icon</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.UnderlineIcon(System.Drawing.Color)">
+            <summary>
+            Gets a font style underline icon with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>A font style underline icon with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.UnderlineIcon">
+            <summary>
+            Gets a font style underline icon.
+            </summary>
+            <returns>A font style underline icon</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.StrikeThroughIcon(System.Drawing.Color)">
+            <summary>
+            Gets a font style strike through icon with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>A font style strike through icon with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.StrikeThroughIcon">
+            <summary>
+            Gets a font style strike through icon.
+            </summary>
+            <returns>A font style strike through icon</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.SuperscriptIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing a superscript text with a given foreground and superscript colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="superscriptColor">A color used to paint the superscript mark on the image.</param>
+            <returns>An icon representing a superscript text with a given foreground and superscript colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.SuperscriptIcon">
+            <summary>
+            Gets an icon representing a superscript text.
+            </summary>
+            <returns>An icon representing a superscript text</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.SubscriptIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing a subscript text with a given foreground and subscript colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="subscriptColor">A color used to paint the subscript mark on the image.</param>
+            <returns>An icon representing a subscript text with a given foreground and superscript colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.SubscriptIcon">
+            <summary>
+            Gets an icon representing a subscript text.
+            </summary>
+            <returns>An icon representing a subscript text</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.HighlightIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing a highlight pen with a given foreground and highlight colors. 
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="highlightColor">A highlight color to be used with the icon.</param>
+            <returns>An icon representing a highlight pen with a given foreground and highlight colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.HighlightIcon(System.Drawing.Color)">
+            <summary>
+            Gets an icon representing a highlight pen with a given highlight color. 
+            </summary>
+            <param name="highlightColor">A highlight color to be used with the icon.</param>
+            <returns>An icon representing a highlight pen with a given highlight color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.TextColorIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing a font color with a given foreground and font color colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="textColor">A font color to be used with the icon.</param>
+            <returns>An icon representing a font color with a given foreground and font color colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.TextColorIcon(System.Drawing.Color)">
+            <summary>
+            Gets an icon representing a font color with a given font color.
+            </summary>
+            <param name="textColor">A font color to be used with the icon.</param>
+            <returns>An icon representing a font color with a given font color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.LeftAlignIcon(System.Drawing.Color)">
+            <summary>
+            Gets an icon representing text's left alignment with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>An icon representing text's left alignment with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.LeftAlignIcon">
+            <summary>
+            Gets an icon representing text's left alignment.
+            </summary>
+            <returns>An icon representing text's left alignment</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.RightAlignIcon(System.Drawing.Color)">
+            <summary>
+            Gets an icon representing text's right alignment with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>An icon representing text's right alignment with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.RightAlignIcon">
+            <summary>
+            Gets an icon representing text's right alignment.
+            </summary>
+            <returns>An icon representing text's right alignment</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.CenterIcon(System.Drawing.Color)">
+            <summary>
+            Gets an icon representing text's center alignment with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>An icon representing text's center alignment with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.CenterIcon">
+            <summary>
+            Gets an icon representing text's center alignment.
+            </summary>
+            <returns>An icon representing text's center</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.JustifyIcon(System.Drawing.Color)">
+            <summary>
+            Gets an icon representing text's justified alignment with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>An icon representing text's justified alignment with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.JustifyIcon">
+            <summary>
+            Gets an icon representing text's justified alignment.
+            </summary>
+            <returns>An icon representing text's justified alignment</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.BulletListIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing a bulleted list with a given foreground and bullet colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="bulletColor">A bullet color to be used with the icon.</param>
+            <returns>An icon representing a numbered list with a given foreground and bullet colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.BulletListIcon">
+            <summary>
+            Gets an icon representing a bulleted list.
+            </summary>
+            <returns>An icon representing a numbered list</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.NumberedListIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing a numbered list with a given foreground and number colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="numberColor">A number color to be used with the icon.</param>
+            <returns>An icon representing a numbered list with a given foreground and number colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.NumberedListIcon">
+            <summary>
+            Gets an icon representing a numbered list.
+            </summary>
+            <returns>An icon representing a numbered list</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.FontSelectIcon(System.Drawing.Color)">
+            <summary>
+            Gets an icon representing font selection with a given foreground color.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <returns>An icon representing font selection with a given foreground color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.FontSelectIcon">
+            <summary>
+            Gets an icon representing font selection.
+            </summary>
+            <returns>An icon representing font selection</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.DefaultColorIcon(System.Boolean)">
+            <summary>
+            Gets an icon representing default font color.
+            </summary>
+            <param name="backround">Indicates whether to return the default background or the default foreground colored icon.</param>
+            <returns>An icon representing default font color</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.LineSpacingIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing line spacing with a given foreground and arrow colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="arrowColor">An arrow color to be used with the icon.</param>
+            <returns>An icon representing line spacing with a given foreground and arrow colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.LineSpacingIcon">
+            <summary>
+            Gets an icon representing line spacing.
+            </summary>
+            <returns>An icon representing line spacing</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.IncreaseIndentIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing indent incrementation with a given foreground and arrow colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="arrowColor">An arrow color to be used with the icon.</param>
+            <returns>An icon representing indent incrementation with a given foreground and arrow colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.IncreaseIndentIcon">
+            <summary>
+            Gets an icon representing indent incrementation.
+            </summary>
+            <returns>An icon representing indent incrementation</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.DecreaseIndentIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing indent decrementation with a given foreground and arrow colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="arrowColor">An arrow color to be used with the icon.</param>
+            <returns>An icon representing indent decrementation with a given foreground and arrow colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.DecreaseIndentIcon">
+            <summary>
+            Gets an icon representing indent decrementation.
+            </summary>
+            <returns>An icon representing indent decrementation</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.DecreaseFontSizeIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing font size decrementation with a given foreground and "decrease" colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="decreaseColor">A color to be used with the size decrementation glyph with the icon.</param>
+            <returns>An icon representing font size decrementation with a given foreground and "decrease" colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.DecreaseFontSizeIcon">
+            <summary>
+            Gets an icon representing font size decrementation.
+            </summary>
+            <returns>An icon representing font size decrementation</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.IncreaseFontSizeIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing font size incrementation with a given foreground and "increase" colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="increaseColor">A color to be used with the size incrementation glyph with the icon.</param>
+            <returns>An icon representing font size incrementation with a given foreground and "increase" colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.IncreaseFontSizeIcon">
+            <summary>
+            Gets an icon representing font size incrementation.
+            </summary>
+            <returns>An icon representing font size incrementation</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.ParagraphIcon(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Gets an icon representing a paragraph with a given foreground and paragraph glyph colors.
+            </summary>
+            <param name="colorForeground">A foreground color to be used with the icon.</param>
+            <param name="paragraphColor">A color to be used with the paragraph glyph with the icon.</param>
+            <returns>An icon representing a paragraph with a given foreground and paragraph glyph colors</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.ParagraphIcon">
+            <summary>
+            Gets an icon representing a paragraph.
+            </summary>
+            <returns>An icon representing a paragraph</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.InsertImageIcon">
+            <summary>
+            Gets an icon representing an image and/or picture.
+            </summary>
+            <returns>An icon representing an image and/or picture</returns>
+        </member>
+        <member name="M:VPKSoft.TextEditIcons.IconsTextEdit.PaletteIcon">
+            <summary>
+            Gets an icon representing a color palette.
+            </summary>
+            <returns>An icon representing a color palette</returns>
+        </member>
+        <member name="T:VPKSoft.TextEditIcons.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.bold">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.bold_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.bulletedlist">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.bulletedlist_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.center">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.center_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.decreasefont">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.decreasefont_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.decreaseindent">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.decreaseindent_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.defaultcolor">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.defaultcolor_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.font">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.font_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.highlight">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.highlight_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.image">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.image_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.increasefont">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.increasefont_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.increaseindent">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.increaseindent_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.italic">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.italic_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.justify">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.justify_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.leftalign">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.leftalign_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.linespacing">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.linespacing_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.numberedlist">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.numberedlist_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.palette">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.palette_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.paragraph">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.paragraph_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.redo">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.redo_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.rightalign">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.rightalign_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.strikethrough">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.strikethrough_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.subscript">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.subscript_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.superscript">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.superscript_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.textcolor">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.textcolor_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.underline">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.underline_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.undo">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:VPKSoft.TextEditIcons.Properties.Resources.undo_gimp">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+    </members>
+</doc>

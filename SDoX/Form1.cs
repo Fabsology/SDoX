@@ -1,4 +1,6 @@
-﻿using iTextSharp.text.pdf;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.rtf.parser;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -36,9 +38,9 @@ namespace SDoX
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Orange800, Primary.Orange900, Primary.Amber800, Accent.Red400, TextShade.WHITE);
-        
-        
-        }   
+
+
+        }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
@@ -70,10 +72,10 @@ namespace SDoX
 
         private void saveDocumentationInFile()
         {
-                IFormatter formatter = new BinaryFormatter();
-                Stream stream = new FileStream(SdoXPath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
-                formatter.Serialize(stream, this.Documents);
-                stream.Close();
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(SdoXPath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
+            formatter.Serialize(stream, this.Documents);
+            stream.Close();
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
@@ -179,7 +181,8 @@ namespace SDoX
                 materialCheckBox1.Location = new Point(40, 7);
                 deleteButton.Enabled = true;
                 deleteButton.Visible = true;
-            } else
+            }
+            else
             {
                 materialCheckBox1.Location = new Point(110, 7);
                 deleteButton.Enabled = false;
@@ -195,12 +198,14 @@ namespace SDoX
 
 
             var result = from r in this.Documents where r.Title.ToLower() == documentationTitle.Text.ToLower() select r;
-            try { 
+            try
+            {
                 this.Documents.Remove(result.First());
                 saveDocumentationInFile();
-            } catch (Exception Ex)
+            }
+            catch (Exception Ex)
             {
-                MessageBox.Show("An Error occurred while saving!\n\n" + Ex.Message,"Oopsy!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("An Error occurred while saving!\n\n" + Ex.Message, "Oopsy!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             documentationTitle.Text = "";
             DocumentCreated.Text = "Created:";
@@ -258,10 +263,10 @@ namespace SDoX
             if (sfd.ShowDialog() == DialogResult.OK)
             {
 
+
+                /*
                 iTextSharp.text.Document DOC = new iTextSharp.text.Document();
-                PdfWriter.GetInstance(DOC, new FileStream(sfd.FileName, FileMode.Create));
-
-
+                PdfWriter.GetInstance(DOC, new FileStream(sfd.FileName, FileMode.Create))
                 DOC.Open();
                 foreach (SDoXDocument document in this.Documents)
                 {
@@ -278,7 +283,8 @@ namespace SDoX
                 }
                 DOC.Close();
                 DOC.Dispose();
-
+                */
+                Convert2PDF(sfd.FileName);
             }
 
         }
@@ -296,6 +302,32 @@ namespace SDoX
             EditorAuthorBox.Text = "Your, the Author";
             EditorTitleBox.Text = "New Document";
 
+        }
+
+        public void Convert2PDF(string FILENAME)
+        {
+            string rtfText = DocumentationViewBox.Rtf; // RTF-Inhalt aus Ihrem Editor-Feld
+
+            // Create a new document
+            Document document = new Document();
+            PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(FILENAME, FileMode.Create));
+            document.Open();
+
+            // Create a MemoryStream from the RTF text
+            MemoryStream stream = new MemoryStream();
+            StreamWriter streamWriter = new StreamWriter(stream);
+            streamWriter.Write(rtfText);
+            streamWriter.Flush();
+            stream.Position = 0;
+
+            // Create an instance of RtfParser
+            RtfParser parser = new RtfParser(null);
+
+            // Read the RTF data from the MemoryStream and convert it to PDF
+            parser.ConvertRtfDocument(new StreamReader(stream).BaseStream, document);
+
+            document.Close();
+            Console.WriteLine("PDF created successfully!");
         }
     }
 }
