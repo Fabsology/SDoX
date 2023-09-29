@@ -3,6 +3,8 @@ using iTextSharp.text.pdf;
 using iTextSharp.text.rtf.parser;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using PuppeteerSharp;
+using RtfPipe;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +12,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.ComTypes;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -26,6 +29,7 @@ namespace SDoX
 
         public List<SDoXDocument> Documents = new List<SDoXDocument>();
         public string SdoXPath = "SDoX.SDoX";
+        public static bool loading = false;
         public Form1()
         {
             InitializeComponent();
@@ -178,13 +182,13 @@ namespace SDoX
         {
             if (materialCheckBox1.Checked)
             {
-                materialCheckBox1.Location = new Point(40, 7);
+                materialCheckBox1.Location = new System.Drawing.Point(40, 7);
                 deleteButton.Enabled = true;
                 deleteButton.Visible = true;
             }
             else
             {
-                materialCheckBox1.Location = new Point(110, 7);
+                materialCheckBox1.Location = new System.Drawing.Point(110, 7);
                 deleteButton.Enabled = false;
                 deleteButton.Visible = false;
             }
@@ -306,8 +310,13 @@ namespace SDoX
 
         public void Convert2PDF(string FILENAME)
         {
-            string rtfText = DocumentationViewBox.Rtf; // RTF-Inhalt aus Ihrem Editor-Feld
 
+            loading = true;
+            string rtfText = DocumentationViewBox.Rtf; // RTF-Inhalt aus Ihrem Editor-Feld
+            rtfText = Rtf.ToHtml(rtfText);
+            ConvertRTF2PDF(rtfText,FILENAME);
+            /*
+            string rtfhtml = "";
             // Create a new document
             Document document = new Document();
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(FILENAME, FileMode.Create));
@@ -327,7 +336,63 @@ namespace SDoX
             parser.ConvertRtfDocument(new StreamReader(stream).BaseStream, document);
 
             document.Close();
+
+            */
             Console.WriteLine("PDF created successfully!");
+        }
+
+
+
+        static async Task ConvertRTF2PDF(string RTF_Content, string FILENAME)
+        {
+            var rtfContent = RTF_Content; // RTF-Inhalt einlesen
+            var pdfFilePath = FILENAME; // Zielpdf-Datei
+
+            await ConvertRtfToPdfAsync(rtfContent, pdfFilePath);
+
+            Console.WriteLine("RTF erfolgreich in PDF mit Formatierung konvertiert.");
+        }
+
+
+        static async Task ConvertRtfToPdfAsync(string rtfContent, string pdfFilePath)
+        {
+            try
+            {
+                await new BrowserFetcher().DownloadAsync(); // Chrome herunterladen
+
+                var launchOptions = new LaunchOptions
+                {
+                    Headless = true
+                };
+
+                using (var browser = await Puppeteer.LaunchAsync(launchOptions))
+                using (var page = await browser.NewPageAsync())
+                {
+                    // Konvertiere RTF-Text in PDF mit Formatierung
+                    await page.SetContentAsync(rtfContent);
+                    await page.PdfAsync(pdfFilePath);
+                }
+                loading = false;
+                MessageBox.Show("Done!");
+            }
+            catch (Exception ex)
+            {
+                loading = false;
+                MessageBox.Show("Fehler beim Konvertieren von RTF in PDF: " + ex.Message);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(loading)
+            {
+                this.Enabled = false;
+                this.Text = "Loading...";
+            } else
+            {
+                this.Enabled = true;
+                this.Text = "SDoX";
+            }
         }
     }
 }
